@@ -16,7 +16,7 @@ const countOnly = function (allItems, itemToCount) {
       if (key === allItems[item]) {
         if (itemToCount[key] === true) {
           //if there's more than this key we need to increment the previous value of this key;
-          if (obj.hasOwnProperty(key)) {
+          if (obj[key]) {
             obj[key]++;
           } else {
             obj[key] = 1;
@@ -25,8 +25,6 @@ const countOnly = function (allItems, itemToCount) {
       }
     }
   }
-  console.log(obj);
-
   return obj;
 };
 // a function that takes an array and object
