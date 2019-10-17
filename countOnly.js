@@ -10,12 +10,10 @@ const assertEqual = function (actual, expected) {
 };
 const countOnly = function (allItems, itemToCount) {
   let obj = {};
-  //check if the item in array exists in itemToCount object and is true
   for (const item in allItems) {
     for (let key in itemToCount) {
       if (key === allItems[item]) {
         if (itemToCount[key] === true) {
-          //if there's more than this key we need to increment the previous value of this key;
           if (obj[key]) {
             obj[key]++;
           } else {
@@ -27,10 +25,6 @@ const countOnly = function (allItems, itemToCount) {
   }
   return obj;
 };
-// a function that takes an array and object
-// return an object //
-//the object must have the values of the properties that exist //
-//in the array and are true in the output object //
 const firstNames = [
   "Karl",
   "Salima",
