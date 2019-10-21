@@ -1,5 +1,8 @@
 const assertEqual = require('../assertEqual');
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("lighthouse", "lighthouse");
-assertEqual(1, 1);
-assertEqual(1, 4);
+const head = require('../head');
+const tail = require('../tail');
+
+// assertEqual("Lighthouse Labs", "Bootcamp");
+const result = tail([1,2,3]);
+assertEqual(tail([1,2]),[2]);
+assertEqual(result[0],2);
