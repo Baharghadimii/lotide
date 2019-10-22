@@ -1,14 +1,4 @@
-/* eslint-disable no-prototype-builtins */
-const assertEqual = function (actual, expected) {
-
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`\uD83D\uDC36 Assertion Failed: ${actual} !== ${expected}`);
-  }
-
-};
-const countOnly = function (stringToCount) {
+const countOnly = function(stringToCount) {
   const string = stringToCount.replace(/ /g, '').split('');
   let obj = {};
   for (const item in string) {
@@ -18,9 +8,8 @@ const countOnly = function (stringToCount) {
       obj[string[item]] = 1;
     }
   }
-  console.log(obj);
+  return obj;
 };
-countOnly('hello world!');
-countOnly('lighthouse in the house');
+module.exports = countOnly;
 
 

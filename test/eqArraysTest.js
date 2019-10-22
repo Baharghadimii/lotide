@@ -1,7 +1,14 @@
-const assertEqual = require("../assertEqual");
-const eqArrays = require("../eqArrays");
+const assert = require("chai").assert;
+const index = require("../index");
 
-assertEqual(eqArrays([1,2],[1,2]), true);
-assertEqual(eqArrays([1,2],[1,3]), false);
-assertEqual(eqArrays(["hello" , "world"],["hello" , "world"]), true);
-assertEqual(eqArrays(["hello" , "world"],["hello"]), false);
+describe('EqualArrays', function() {
+  it('should return true if two flat arrays are the same', function() {
+    assert.deepEqual(index.eqArrays(["hello" , "world"],["hello" , "world"]), true);
+    assert.deepEqual(index.eqArrays([1, 2, 3], [1, 2, 3]), true);
+
+  });
+  it('should return true if two nested arrays are the same', function() {
+    assert.deepEqual(index.eqArrays([1, [2, [3]], 3], [1, [2, [3]], 3]), true);
+  });
+});
+
